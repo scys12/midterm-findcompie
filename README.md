@@ -26,7 +26,7 @@ If you don't want to use docker, you can run these commands. But before, create 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel
+DB_DATABASE=midterm-findcompie
 DB_USERNAME=root
 DB_PASSWORD=
 ```
