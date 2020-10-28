@@ -39,8 +39,8 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory contents
 COPY . /var/www
 
-RUN ls
-RUN mv .env.example .env
+RUN cp .env.dev .env
+RUN composer install
 RUN php artisan key:generate
 RUN php artisan route:clear
 RUN php artisan config:clear
