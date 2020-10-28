@@ -27,7 +27,20 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'username',
+        'location',
+        'phone_number',
     ];
+
+    public function items()
+    {
+        return $this->hasMany('App\Models\Item');
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany('App\Models\Transaction');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
