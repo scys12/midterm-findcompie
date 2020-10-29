@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl\
+    nodejs
    
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -38,10 +39,8 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy existing application directory contents
 COPY . /var/www
-
-RUN cp .env.dev .env
+RUN npm install && npm run dev
 RUN composer install
-RUN php artisan key:generate
 RUN php artisan route:clear
 RUN php artisan config:clear
 RUN php artisan cache:clear
