@@ -85,7 +85,15 @@
                         </div>
                         <br>
                     </div>   
-                    <a href="" class="btn btn-dark text-white" style="width: 100%;">Lihat Semua Produk</a>
+                    <nav aria-label="Page navigation example" class="bg-secondary text-white mt-2">
+                        <ul class="pagination  justify-content-center bg-dark">
+                            <li class="page-item "><a class="page-link bg-secondary text-white" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
             <br>
