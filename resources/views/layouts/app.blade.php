@@ -47,7 +47,16 @@
                 <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="#">Toko Saya</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Logout</a>
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a style="color: white" class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                    {{ __('Logout') }}
+                </a>
+            </form>
         </div>
     </nav> 
 <br>

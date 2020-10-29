@@ -32,8 +32,8 @@ init-without-docker:
 	php artisan serve
 
 restart:
-	@make up
 	@make down
+	@make up
 
 remake:
 	@make destroy
