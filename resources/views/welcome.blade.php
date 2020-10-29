@@ -110,6 +110,8 @@
                             </div>
                         <!-- </div> -->
                     </div>
+                    <br>
+                    <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Semua Produk</a>
                 </div>
             </div>
             <br>

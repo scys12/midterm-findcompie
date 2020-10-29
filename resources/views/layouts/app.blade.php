@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-dark fixed-top">
         <a class="navbar-brand-light ml-5 h1" style="color: white" href="#">Elviza</a>
         <div class="collapse navbar-collapse ml-1 h5 mt-3" style="color: white" id="navbarSupportedContent">
-            electronic
+            Computer
         </div>
         <div class="nav-item navbar-right mr-2">
             <form class="form-inline my-2 my-lg-0">
