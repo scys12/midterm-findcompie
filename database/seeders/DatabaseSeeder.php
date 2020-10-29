@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,19 +14,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert(
+        DB::table('categories')->insert([
             [
-                'name' => 'RAM',
+                'name' => 'RAM'
             ],
             [
-                'name' => 'Motherboard',
+                'name' => 'Motherboard'
             ],
             [
-                'name' => 'VGA',
+                'name' => 'VGA'
             ],
             [
-                'name' => 'Storage',
-            ]
-        );
+                'name' => 'Storage'
+            ],
+            [
+                'name' => 'Processor'
+            ],
+        ]);
     }
 }
