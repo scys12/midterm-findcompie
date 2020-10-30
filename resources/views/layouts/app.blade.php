@@ -30,7 +30,7 @@
         <i  style="font-size:24px; color:white" class="fa">&#xf07a;</i>
         <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"  style="color: white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kategori</a>
+            Category</a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">RAM</a>
                 <a class="dropdown-item" href="#">VGA</a>
@@ -59,7 +59,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
-                    <a class="dropdown-item" href=" {{ route('dashboard') }} ">Toko Saya</a>
+                    <a class="dropdown-item" href=" {{ route('dashboard') }} ">My Store</a>
                 <div class="dropdown-divider"></div>
 
                 <form method="POST" action="{{ route('logout') }}">

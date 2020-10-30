@@ -20,6 +20,32 @@
                     <div class="show-grid text-center row bg-secondary text-white" style="justify-content: center;display: flex;">
                         @if (count($items) > 0)
                             @foreach ($items as $item)
+                            @if($item->is_bought == true )
+                            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                                    <br>
+                                    <div class="card bg-dark text-white m-4">
+                                        <div style="padding: 30px"><img class="card-img-top bg-dark text-white" src="/assets/sold.png" alt=""></div>
+                                        <div class="card-body" style="flex: 1 1 1 !important;">
+                                            <h4 class="card-title">
+                                            <a href="#" style="font-weight: 700" class="text-white">{{ $item->name }}</a>
+                                            </h4>
+                                            <p style="font-style: italic">[{{ $item->category->name }}]</p>
+                                            <p style="font-weight: 700">Rp{{ $item->price }}</p>
+                                        </div>
+                                        <div class="card-footer d-flex bg-dark text-white" style="justify-content: space-between; flex-direction: column">
+                                            <div class="m-1">
+                                                <a href="{{route('product.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Product Detail</a>
+                                            </div>
+                                            <div class="m-1">
+                                                <a href="{{route('product.update', ['id'=> $item->id])}}"  class="btn btn-warning text-white" style="width: 100%;">Edit Product</a>
+                                            </div>
+                                            <div class="m-1">
+                                                <button data-toggle="modal" data-target="#myModal" class="btn-del btn btn-danger text-white" data-item-id="{{$item->id}}" style="width: 100%;"> Delete Product </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @else
                                 <div class="col-lg-4 col-md-6 mb-4 d-flex">
                                     <br>
                                     <div class="card bg-dark text-white m-4">
@@ -44,6 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             @endforeach
                         @else
                         <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center" style="width: 100%; height:100%;min-height: 60vh;align-items:center">

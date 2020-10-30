@@ -33,7 +33,7 @@
                 </a>
             </div>
             <div class="card-home card bg-dark text-white">
-                <h5 class="card-header bg-dark text-white" style="text-align : center">Kategori</h5>
+                <h5 class="card-header bg-dark text-white" style="text-align : center">Category</h5>
                 <div class="card-body bg-dark text-white ">
                     <div class="show-grid text-center row bg-secondary text-white pb-5">
                         <div class="col-lg-4 col-md-6 mb-4 ">
@@ -46,7 +46,7 @@
                                     </h4>
                                 </div>
                                 <div class="card-footer bg-dark text-white">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href="{{ url('products') }}"  class="btn btn-secondary text-white" style="width: 100%;">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href="{{ url('products') }}"  class="btn btn-secondary text-white" style="width: 100%;">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href="{{ url('products') }}"  class="btn btn-secondary text-white" style="width: 100%;">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                         </h4>
                                     </div>
                                     <div class="card-footer">
-                                        <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                        <a href="{{ url('products') }}"  class="btn btn-secondary text-white" style="width: 100%;">See More</a>
                                     </div>
                                 </div>
                             </div>
@@ -104,14 +104,14 @@
                                         </h4>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                        <a href="{{ url('products') }}" class="btn btn-secondary text-white" style="width: 100%;">See More</a>
                                     </div>
                                 </div>
                             </div>
                         <!-- </div> -->
                     </div>
                     <br>
-                    <a href="" class="btn btn-dark text-white" style="width: 100%;">Lihat Semua Produk</a>
+                    <a href="{{ url('products') }}" class="btn btn-dark text-white" style="width: 100%;">See All Products</a>
                 </div>
             </div>
             <br>
