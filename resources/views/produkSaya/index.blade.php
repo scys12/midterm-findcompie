@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
  <!-- Page Content -->
+ <br>
  <div class="bg-secondary text-white"> 
     <br>
  <div class="container">

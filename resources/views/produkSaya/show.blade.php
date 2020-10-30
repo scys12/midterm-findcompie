@@ -2,20 +2,20 @@
 
 @section('content')
 
-<div class="container mt-5">	
-    <div class="card">
-        <div class="row">
-                <article class="card-body p-5">
+<div class="bg-dark">
+    <div class="container mt-5 bg-dark ">	
+        <div class="card bg-secondary text-white">
+            <div class="row">
+                <article class="card-body p-5 col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <h3 class="title mb-3">Nama Produk</h3>
                     <p class="price-detail-wrap"> 
                         <span class="price h3 text-warning"> 
                             <span class="currency">Rp</span><span class="num">1.299.000</span>
                         </span> 
-                        <span>/per kg</span> 
                     </p> <!-- price-detail-wrap .// -->
                     <dl class="item-property">
                         <dt>Deskripsi Produk</dt>
-                        <dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                        <dd class=""><p>Here goes description consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco </p></dd>
                     </dl>
@@ -33,11 +33,15 @@
                                 </dl>  <!-- item-property .// -->
                             </div> <!-- col.// -->
                         </div> <!-- row.// -->
-                    <a href="#myModal" class="btn btn-lg btn-danger text-uppercase"> Hapus </a>
+                    <a href="#myModal" data-toggle="modal"class="btn btn-lg btn-danger text-uppercase"> Hapus </a>
                     <a href="#" class="btn btn-lg btn-warning text-uppercase">  Edit </a>
                 </article> <!-- card-body.// -->
-        </div> <!-- row.// -->
-    </div> <!-- card.// -->
+                <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                </article>
+            </div> <!-- row.// -->
+        </div> <!-- card.// -->
+    </div>
 </div>
 <!--container.//-->
 
