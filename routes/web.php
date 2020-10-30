@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\ItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
+    Route::get('/dashboard', [ItemController::class, 'displayUserItems'])
+                ->name('dashboard');
+
+    Route::prefix('product')->group(function() {
+        Route::get('/create', [ItemController::class, 'displayCreateItemPage'])
+                    ->name('product.create');
+
+        Route::post('/create', [ItemController::class, 'createItem'])
+                    ->name('product.post_create');
+        
+        Route::get('/update/{id}', [ItemController::class, 'displayupdateItemPage'])
+                    ->name('product.update');
+
+        Route::put('/update/{id}', [ItemController::class, 'updateItem'])
+                    ->name('product.put_update');
+        
+        Route::get('/{id}', [ItemController::class, 'displayUserItem'])
+                    ->name('product.show');
+    });
+});
 
 
 // Livewire Route

@@ -13,8 +13,6 @@ class Item extends Model
         'name',
         'price',
         'description',
-        'location',
-        'phone_number',
     ];
 
     public function transaction()

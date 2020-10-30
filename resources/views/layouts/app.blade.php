@@ -39,29 +39,42 @@
                 <a class="dropdown-item" href="#">Storage</a>
             </div>
         </div>
-        <div class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle"  style="color: white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Username
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Toko Saya</a>
-            <div class="dropdown-divider"></div>
-
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <a style="color: white" class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                    {{ __('Logout') }}
+        @guest
+            @if (Route::has('login'))
+                <div class="nav-item">
+                    <a class="nav-link" style="color: white" href="{{ route('login') }}">Login</a>
+                </div>
+                @if (Route::has('register'))
+                    <div class="nav-item">
+                        <a href="{{ route('register') }}" class="nav-link" style="color: white">Register</a>
+                    </div>
+                @endif            
+            @endif        
+        @endguest
+        @auth
+            <div class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle"  style="color: white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Username
                 </a>
-            </form>
-        </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
+                    <a class="dropdown-item" href=" {{ route('dashboard') }} ">Toko Saya</a>
+                <div class="dropdown-divider"></div>
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a style="color: black" class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                </form>
+            </div>
+        @endauth
     </nav> 
 <br>
 @yield('content')
- 
   <!-- /.container -->
 
   <!-- Footer -->

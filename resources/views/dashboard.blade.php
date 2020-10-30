@@ -2,116 +2,110 @@
 @section('content')
  <!-- Page Content -->
  <div class="bg-secondary text-white"> 
+    <br>
  <div class="container">
     <div class="row">
         <div class=" justify-content-center">
-            <div id="carouselExampleIndicators" class="carousel slide my-4 col-lg-12" style=" margin-left: auto; margin-right: auto; width: 100%;" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                    <img class="d-block img-fluid" style="width:1200px; height:350px"  src="https://i0.wp.com/blog.dimensidata.com/wp-content/uploads/2016/09/Daftar-Harga-Motherboard-Gaming-Terbaik-Asus-dan-Sepesifikasi-660x330.jpg" alt="First slide">
-                    
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block img-fluid" style="width:1200px; height:350px" src="https://2.bp.blogspot.com/-gIP5q6u3M28/XNUhEDRQ4gI/AAAAAAAACqM/Z2GTwNizBtgNz6VQJGoOWtBqEy9DwZuPgCLcBGAs/s640/Prosesor-Intel-i9.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block img-fluid" style="width:1200px; height:350px" src="https://s4.bukalapak.com/uploads/content_attachment/e4527f9460e8d762b39b44c5/w-744/GTX_Max_Q_-_Body_1.jpg" alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
             <div class="card-home card bg-dark text-white">
-                <h5 class="card-header bg-dark text-white" style="text-align : center">Kategori</h5>
-                <div class="card-body">
-                    <div class="show-grid text-center row bg-dark text-white">
-                        <div class="col-lg-4 col-md-6 mb-4 ">
-                            <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="https://www.shwetacomputer.com/wp-content/uploads/2020/08/153665251610-800x430.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">RAM</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer bg-secondary text-white">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                    <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">Produk Saya
+                        <button class="btn btn-primary profile-button float-right">
+                            <i style="font-size:20px" class=" mr-2 pt-1 fa">&#xf067;</i>Tambah Produk</button>
+                    </h4>  
+                <div class="card-body bg-dark text-white">
+                    <div class="show-grid text-center row bg-secondary text-white">
+                        @foreach ($items as $item)
+                            <div class="col-lg-4 col-md-6 mb-4 ">
+                                <br>
+                                <div class="card h-100 bg-dark text-white m-4">
+                                    <a href="#" style="padding-top: 20px"><img class="card-img-top bg-dark text-white" src="{{asset('assets/'. $item->category->name)}}" alt=""></a>
+                                    <div class="card-body" style="flex: 1 1 1 !important;">
+                                        <h4 class="card-title">
+                                        <a href="#" style="font-weight: 700" class="text-white">{{ $item->name }}</a>
+                                        </h4>
+                                        <p style="font-style: italic">[{{ $item->category->name }}]</p>
+                                        <p style="font-weight: 700">Rp{{ $item->price }}</p>
+                                    </div>
+                                    <div class="card-footer d-flex bg-dark text-white" style="justify-content: space-between; flex-direction: column">
+                                        <div class="m-1">
+                                            <a href="{{route('product.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
+                                        </div>
+                                        <div class="m-1">
+                                            <a href="{{route('product.update', ['id'=> $item->id])}}"  class="btn btn-warning text-white" style="width: 100%;">Edit Produk</a>
+                                        </div>
+                                        <div class="m-1">
+                                            <a href=""  class="btn btn-danger text-white" style="width: 100%;">Hapus Produk</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-4">
+                        @endforeach
+                        {{-- <div class="col-lg-4 col-md-6 mb-4">
                         <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="https://i1.wp.com/urbandigital.id/wp-content/uploads/2019/02/VGA-GAMING-TERMURAH.png?fit=768%2C380&ssl=1" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://i1.wp.com/urbandigital.id/wp-content/uploads/2019/02/VGA-GAMING-TERMURAH.png?fit=768%2C380&ssl=1" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">VGA</a>
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">PROCESSOR</a>
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- <div class="row justify-content-center"> -->
-                            <div class="col-lg-4 col-md-6 offset-md-2 mb-4">
-                            <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white"style="width:300px; height:250px"  src="https://storage-asset.msi.com/event/2020/mb/z490/images/msi-motherboards-z490-models.png" alt=""></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                        <a href="#" class="text-white">MOTHERBOARD</a>
-                                        </h4>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
-                                    </div>
+                        <div class="col-lg-4 col-md-6 offset-md-2 mb-4">
+                        <br>
+                        <div class="card h-100 bg-dark text-white">
+                            <a href="#"><img class="card-img-top bg-dark text-white"style="width:300px; height:250px"  src="https://storage-asset.msi.com/event/2020/mb/z490/images/msi-motherboards-z490-models.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <a href="#" class="text-white">MOTHERBOARD</a>
+                                    </h4>
+                                </div>
+                                <div class="card-footer">
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                            <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="https://www.intel.com/content/dam/products/hero/foreground/data-center-ssds-marquee-16x9.png.rendition.intel.web.320.180.png" alt=""></a>
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                        <a href="#" class="text-white">STORAGE</a>
-                                        </h4>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="" class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
-                                    </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                        <br>
+                        <div class="card h-100 bg-dark text-white">
+                            <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.com/content/dam/products/hero/foreground/data-center-ssds-marquee-16x9.png.rendition.intel.web.320.180.png" alt=""></a>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                    <a href="#" class="text-white">STORAGE</a>
+                                    </h4>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
                                 </div>
                             </div>
-                        <!-- </div> -->
-                    </div>
-                    <br>
-                    <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Semua Produk</a>
+                        </div>
+                        <br> --}}
+                    </div>   
+                    <nav aria-label="Page navigation example" class="bg-secondary text-white mt-2">
+                        <ul class="pagination  justify-content-center bg-dark">
+                            <li class="page-item "><a class="page-link bg-secondary text-white" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
             <br>

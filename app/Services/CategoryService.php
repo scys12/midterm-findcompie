@@ -3,9 +3,10 @@
 namespace App\Services;
 
 use App\Contracts\Repository\CategoryRepositoryInterface;
+use App\Contracts\Service\CategoryServiceInterface;
 use Illuminate\Support\Facades\Hash;
 
-class CategoryService
+class CategoryService implements CategoryServiceInterface
 {
     private $categoryRepository;
     public function __construct(CategoryRepositoryInterface $categoryRepository) {

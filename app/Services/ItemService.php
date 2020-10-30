@@ -3,9 +3,10 @@
 namespace App\Services;
 
 use App\Contracts\Repository\ItemRepositoryInterface;
+use App\Contracts\Service\ItemServiceInterface;
 use Illuminate\Support\Facades\Hash;
 
-class ItemService
+class ItemService implements ItemServiceInterface
 {
     private $itemRepository;
     public function __construct(ItemRepositoryInterface $itemRepository) {
@@ -17,12 +18,12 @@ class ItemService
         return $this->itemRepository->create($data);
     }
 
-    public function updateItem(array $data, $id)
+    public function updateItem(array $data)
     {
-        return $this->itemRepository->update($data, $id);
+        return $this->itemRepository->update($data, $data['user_id']);
     }
 
-    public function removeItem($id)
+    public function removeItem(int $id)
     {
         return $this->itemRepository->delete($id);
     }

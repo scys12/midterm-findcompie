@@ -27,8 +27,7 @@ class ItemRequest extends FormRequest
             'name' => ['required', 'string', 'max:100'],
             'price' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'location' => ['required', 'string', 'max:50'],
-            'phone_number' => ['required', 'string', 'max:14'],
+            'category_id' => ['required', 'string'],
         ];
     }
 }

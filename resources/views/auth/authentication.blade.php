@@ -1,4 +1,13 @@
 <x-guest-layout>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+        <ul >
+            @foreach ($errors->all() as $error)
+                <li style = "list-style-type: none; text-align:right; padding-bottom:5px"><strong>{{$error}}</strong></li>
+            @endforeach
+        </ul>
+        </div>                  
+    @endif
     <div class="hero">
         <div class="form-box">
             <div class="button-box">
@@ -9,18 +18,18 @@
             <form id="login" class="input-group" method="POST" action="{{ route('login') }}">
                 @csrf
                 <input type="email" class="input-field" placeholder="Email" name="email" :value="old('email')" required autofocus>
-                <input type="text" class="input-field" placeholder="Password" type="password" name="password" required autocomplete="current-password">
+                <input type="password" class="input-field" placeholder="Password" type="password" name="password" required autocomplete="current-password">
                 <button type="submit" class="submit-btn mt-3">Log In</button>
             </form>
             <form id="register" class="input-group" method="POST" action="{{ route('register') }}">
                 @csrf
-                <input type="text" class="input-field" placeholder="Name" name="name" :value="old('name')" required autofocus autocomplete="name">
-                <input type="text" class="input-field" placeholder="Create Username" name="username" :value="old('username')" required autofocus autocomplete="username">
-                <input type="email" class="input-field" placeholder="Email" name="email" :value="old('email')" required>
+                <input type="text" class="input-field" placeholder="Name" name="name" value="old('name')" required autofocus autocomplete="name">
+                <input type="text" class="input-field" placeholder="Create Username" name="username" value="old('username')" required autofocus autocomplete="username">
+                <input type="email" class="input-field" placeholder="Email" name="email" value="old('email')" required>
                 <input type="password" class="input-field" placeholder="New Password" name="password" required autocomplete="new-password">
                 <input type="password" class="input-field" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
-                <input type="text" class="input-field" placeholder="Location" name="location" :value="old('location')" required autofocus autocomplete="location">
-                <input type="text" class="input-field" placeholder="Phone Number" name="phone_number" :value="old('phone_number')" required autofocus autocomplete="phone_number">
+                <input type="text" class="input-field" placeholder="Location" name="location" value="old('location')" required autofocus autocomplete="location">
+                <input type="text" class="input-field" placeholder="Phone Number" name="phone_number" value="old('phone_number')" required autofocus autocomplete="phone_number">
                 <button type="submit" class="submit-btn mt-3">Register</button>
             </form>
         </div>
