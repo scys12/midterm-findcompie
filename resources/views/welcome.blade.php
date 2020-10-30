@@ -34,47 +34,47 @@
             </div>
             <div class="card-home card bg-dark text-white">
                 <h5 class="card-header bg-dark text-white" style="text-align : center">Kategori</h5>
-                <div class="card-body">
-                    <div class="show-grid text-center row bg-dark text-white">
+                <div class="card-body bg-dark text-white ">
+                    <div class="show-grid text-center row bg-secondary text-white pb-5">
                         <div class="col-lg-4 col-md-6 mb-4 ">
                             <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="/assets/ram.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/ram.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">RAM</a>
                                     </h4>
                                 </div>
-                                <div class="card-footer bg-secondary text-white">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                <div class="card-footer bg-dark text-white">
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="/assets/vga.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/vga.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">VGA</a>
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="/assets/processor.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/processor.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">PROCESSOR</a>
                                     </h4>
                                 </div>
                                 <div class="card-footer">
-                                    <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
                                 </div>
                             </div>
                         </div>
@@ -82,36 +82,36 @@
                         <!-- <div class="row justify-content-center"> -->
                             <div class="col-lg-4 col-md-6 offset-md-2 mb-4">
                             <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white"style="width:300px; height:250px"  src="/assets/motherboard.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white"style="width:300px; height:250px"  src="/assets/motherboard.png" alt=""></a>
                                     <div class="card-body">
                                         <h4 class="card-title">
                                         <a href="#" class="text-white">MOTHERBOARD</a>
                                         </h4>
                                     </div>
                                     <div class="card-footer">
-                                        <a href=""  class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                        <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 mb-4">
                             <br>
-                            <div class="card h-100 bg-secondary text-white">
-                                <a href="#"><img class="card-img-top bg-secondary text-white" style="width:300px; height:250px" src="/assets/storage.png" alt=""></a>
+                            <div class="card h-100 bg-dark text-white">
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/storage.png" alt=""></a>
                                     <div class="card-body">
                                         <h4 class="card-title">
                                         <a href="#" class="text-white">STORAGE</a>
                                         </h4>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="" class="btn btn-dark text-white" style="width: 100%;">Lihat Lebih banyak</a>
+                                        <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Lebih banyak</a>
                                     </div>
                                 </div>
                             </div>
                         <!-- </div> -->
                     </div>
                     <br>
-                    <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Semua Produk</a>
+                    <a href="" class="btn btn-dark text-white" style="width: 100%;">Lihat Semua Produk</a>
                 </div>
             </div>
             <br>

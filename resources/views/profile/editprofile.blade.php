@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="bg-dark">
-    <div class="container rounded bg-white mt-5 bg-secondary text-white">
+    <div class="container rounded bg-s mt-5 bg-secondary text-white">
         <div class="row  bg-secondary text-white">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center py-0" ><img class="rounded-circle" style="width: 300px; height:300px"src="/assets/profile.png">

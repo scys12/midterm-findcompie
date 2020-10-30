@@ -18,7 +18,7 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <a class="navbar-brand-light ml-5 h1" style="color: white" href="#">Elviza</a>
+        <a class="navbar-brand-light ml-5 h1" style="color: white" href="">Elviza</a>
         <div class="collapse navbar-collapse ml-1 h5 mt-3" style="color: white" id="navbarSupportedContent">
             Computer
         </div>

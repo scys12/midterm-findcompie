@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="bg-dark">
-    <div class="container mt-5 bg-dark ">	
+    <div class="container bg-dark ">	
         <div class="card bg-secondary text-white">
             <div class="row">
                 <article class="card-body p-5 col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -69,17 +69,17 @@
           <tbody>
             <tr>
               <td class="w-25">
-                <img src="/assets/processor.png" class="img-fluid img-thumbnail" alt="Sheep">
+                <img src="{{asset('assets/'. $item->category->name.'.png')}}" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
-              <td>Vans Sk8-Hi MTE Shoes</td>
-              <td>1700000</td>
-              <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-              <td>Rp. 1700000</td>
+              <td>{{ $item->name }}</td>
+              <td>{{ $item->price }}</td>
+              <td class="qty">1</td>
+              <td>{{ $item->price }}</td>
             </tr>
           </tbody>
         </table> 
         <div class="d-flex justify-content-end">
-          <h5>Total: <span class="price text-success">Rp. 1700000</span></h5>
+          <h5>Total: <span class="price text-success">{{ $item->price }}</span></h5>
         </div>
       </div>
       <div class="modal-footer border-top-0 d-flex justify-content-between">

@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
  <!-- Page Content -->
- <br>
- <div class="bg-secondary text-white"> 
-    <br>
- <div class="container">
-    <div class="row">
-        <div class=" justify-content-center">
+ <div class="bg-secondary text-white ">
+     <br>
+     <br>
+     <br> 
+ <div class="container mt-5">
+    <div class="row mt-5">
+        <br>
+        <div class=" justify-content-center mt-5">
             <div class="card-home card bg-dark text-white">
                     <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">Produk Saya
                         <button class="btn btn-primary profile-button float-right">
