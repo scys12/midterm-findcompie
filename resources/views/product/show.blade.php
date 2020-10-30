@@ -37,7 +37,7 @@
                     <a href="#" class="btn btn-lg btn-warning text-uppercase">  Edit </a>
                 </article> <!-- card-body.// -->
                 <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="/asstes/vga.png" alt=""></a>
                 </article>
             </div> <!-- row.// -->
         </div> <!-- card.// -->

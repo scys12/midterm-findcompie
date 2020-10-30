@@ -39,7 +39,7 @@
                         <p><a class="btn btn-primary" data-toggle="modal" data-target="#cartModal" href=""><i class="fa fa-shopping-cart"></i> Beli Sekarang</a></p>
                 </article> <!-- card-body.// -->
                 <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="/assets/processor.png" alt=""></a>
                 </article>
             </div> <!-- row.// -->
         </div> <!-- card.// -->
@@ -72,7 +72,7 @@
           <tbody>
             <tr>
               <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                <img src="/assets/processor.png" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
               <td>Vans Sk8-Hi MTE Shoes</td>
               <td>1700000</td>

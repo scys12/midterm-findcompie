@@ -5,7 +5,7 @@
     <div class="container rounded bg-white mt-5 bg-secondary text-white">
         <div class="row  bg-secondary text-white">
             <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center py-0" ><img class="rounded-circle" style="width: 300px; height:300px"src="https://cdn4.iconfinder.com/data/icons/instagram-ui-twotone/48/Paul-18-512.png">
+                <div class="d-flex flex-column align-items-center text-center py-0" ><img class="rounded-circle" style="width: 300px; height:300px"src="/assets/profile.png">
                 <span class="font-weight-bold">Username</span><span class="text-white">email</span><span> </span></div>
             </div>
             <div class="col-md-8 border-right">
