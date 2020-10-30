@@ -39,6 +39,7 @@
                 <a class="dropdown-item" href="#">Storage</a>
             </div>
         </div>
+        <a href="{{ route('products') }}" style="color: white" class="nav-link"> Products </a>
         @guest
             @if (Route::has('login'))
                 <div class="nav-item">
@@ -54,7 +55,7 @@
         @auth
             <div class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle"  style="color: white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Username
+                {{ Auth::user()->username}}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
@@ -64,7 +65,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <a style="color: black" class="nav-link" href="{{ route('logout') }}"
+                    <a style="color: black;padding: .25rem 1.5rem;" class="nav-link" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Logout') }}

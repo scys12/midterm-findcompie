@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/products', [ItemController::class, 'displayAllItems'])
+            ->name('products');
+
+Route::get('/products/seller/{id}', [ItemController::class, 'displayOtherUserItems'])
+            ->name('products.other_user');
+
 Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
     Route::get('/dashboard', [ItemController::class, 'displayUserItems'])
                 ->name('dashboard');
@@ -34,9 +40,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
 
         Route::put('/update/{id}', [ItemController::class, 'updateItem'])
                     ->name('product.put_update');
+
+        Route::delete('/delete', [ItemController::class, 'removeItem'])
+                    ->name('product.delete');
         
         Route::get('/{id}', [ItemController::class, 'displayUserItem'])
                     ->name('product.show');
+                    
+        Route::get('/products/{id}', [ItemController::class, 'displayGlobalProduct'])
+                    ->name('products.show');
     });
 });
 

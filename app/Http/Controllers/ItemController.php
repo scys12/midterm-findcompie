@@ -17,6 +17,13 @@ class ItemController extends Controller
         $this->categoryService = $categoryService;
     }
 
+    public function displayAllItems()
+    {
+        return view('products.index', [
+            'items' => $this->itemService->getAllItems()
+        ]);
+    }
+
     public function displayUserItem($id)
     {
         return view('product.show', [
@@ -24,10 +31,26 @@ class ItemController extends Controller
         ]);
     }
 
-    public function displayUserItems()
+    public function displayGlobalProduct($id)
     {
+        return view('products.show', [
+            'item' => $this->itemService->getItem($id)
+        ]);
+    }
+
+    public function displayUserItems(Request $request)
+    {
+        $user_data = array('user_id' => $request->user()->id);
         return view('dashboard', [
-            'items' => $this->itemService->getAllItems()
+            'items' => $this->itemService->getUserItems($user_data)
+        ]);
+    }
+
+    public function displayOtherUserItems($id)
+    {
+        $user_data = array('user_id' => $id, 'is_bought' => false);
+        return view('products.sellers', [
+            'items' => $this->itemService->getUserItems($user_data)
         ]);
     }
 
@@ -53,7 +76,7 @@ class ItemController extends Controller
         $data = $request->validated();
         $data['user_id'] = $auth_user->id;
         $newItem = $this->itemService->createItem($data);
-        return view('dashboard');
+        return redirect()->route('dashboard')->with('status', 'Item successfully created');
     }
 
     public function updateItem(ItemRequest $request, $id)
@@ -61,11 +84,13 @@ class ItemController extends Controller
         $data = $request->validated();
         $data['user_id'] = $id;
         $updatedItem = $this->itemService->updateItem($data);
-        return view('dashboard');
+        return redirect()->route('dashboard')->with('status', 'Item successfully updated');
     }
 
-    public function removeItem($id)
+    public function removeItem(Request $request)
     {
+        $id = $request->id;
         $deletedItem = $this->itemService->removeItem($id);
+        return redirect()->route('dashboard')->with('status', 'Item successfully deleted');
     }
 }

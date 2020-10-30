@@ -6,40 +6,37 @@
         <div class="card bg-secondary text-white">
             <div class="row">
                 <article class="card-body p-5 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3 class="title mb-3">Nama Produk</h3>
-                    <p class="price-detail-wrap"> 
-                        <span class="price h3 text-warning"> 
-                            <span class="currency">Rp</span><span class="num">1.299.000</span>
-                        </span> 
-                    </p> <!-- price-detail-wrap .// -->
-                    <dl class="item-property">
-                        <dt>Deskripsi Produk</dt>
-                        <dd class=""><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco </p></dd>
-                    </dl>
-                    <dl class="param param-feature">
-                        <dt>Kategori</dt>
-                        <dd>Kategori Barang</dd>
-                    </dl>  <!-- item-property-hor .// -->
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <dl class="param param-inline">
-                                    <dt>Jumlah: </dt>
-                                    <dd>
-                                <select class="form-control form-control-sm" style="width:70px;">
-                                    <option> 1 </option>
-                                    <option> 2 </option>
-                                    <option> 3 </option>
-                                </select>
-                            </dd>
-                                    </dl>  <!-- item-property .// -->
-                                </div> <!-- col.// -->
-                            </div> <!-- row.// -->
-                        <p><a class="btn btn-primary" data-toggle="modal" data-target="#cartModal" href=""><i class="fa fa-shopping-cart"></i> Beli Sekarang</a></p>
+                  <h3 class="title mb-3">{{ $item->name }}</h3>
+                  <p class="price-detail-wrap"> 
+                      <span class="price h3 text-warning"> 
+                          <span class="currency">Rp</span><span class="num">{{ $item->price }}</span>
+                      </span> 
+                  </p> <!-- price-detail-wrap .// -->
+                  <dl class="item-property">
+                      <dt>Deskripsi Produk</dt>
+                      <dd class=""><p>{{ $item->description }}</p></dd>
+                  </dl>
+                  <dl class="param param-feature">
+                      <dt>Kategori</dt>
+                      <dd>{{ $item->category->name }}</dd>
+                  </dl>  <!-- item-property-hor .// -->
+                  <dl class="param param-feature">
+                    <dt>Seller</dt>
+                    <dd>{{ $item->user->name }}</dd>
+                  </dl>  <!-- item-property-hor .// -->
+                  <dl class="param param-feature">
+                    <dt>Location</dt>
+                    <dd>{{ $item->user->location }}</dd>
+                  </dl>  <!-- item-property-hor .// -->
+                  <div class="d-flex">
+                      @if ($item->user->id == Auth::user()->id)                                
+                        <p style="margin-right: 5px"><a class="btn btn-primary" data-toggle="modal" data-target="#cartModal" href=""><i class="fa fa-shopping-cart"></i> Buy Now</a></p>
+                    @endif
+                    <p><a class="btn btn-danger" href="javascript:history.back()">Back</a></p>
+                  </div>
                 </article> <!-- card-body.// -->
                 <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                  <img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="{{asset('assets/'. $item->category->name.'.png')}}" alt="">
                 </article>
             </div> <!-- row.// -->
         </div> <!-- card.// -->

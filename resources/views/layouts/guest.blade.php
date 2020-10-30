@@ -50,7 +50,7 @@
                     <a href="{{ route('register') }}" class="nav-link" style="color: white">Register</a>
                 </div>
             @endif            
-        @endif        
+        @endif
     </nav> 
 <br>
 <br>

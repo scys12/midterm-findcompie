@@ -5,93 +5,41 @@
     <br>
  <div class="container">
     <div class="row">
-        <div class=" justify-content-center">
+        <div class=" justify-content-center" style="width: 100%">
             <div class="card-home card bg-dark text-white">
-                    <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">Semua Produk  
+                    <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">All Products
                     </h4>  
                 <div class="card-body bg-dark text-white">
-                    <div class="show-grid text-center row bg-secondary text-white">
-                        <div class="col-lg-4 col-md-6 mb-4 ">
-                            <br>
-                            <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.shwetacomputer.com/wp-content/uploads/2020/08/153665251610-800x430.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">RAM</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer bg-dark text-white">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-4">
-                        <br>
-                            <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://i1.wp.com/urbandigital.id/wp-content/uploads/2019/02/VGA-GAMING-TERMURAH.png?fit=768%2C380&ssl=1" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">VGA</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
+                    <div class="show-grid text-center row bg-secondary text-white" style="justify-content: center;display: flex;">
+                        @foreach ($items as $item)
+                            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                                <br>
+                                <div class="card bg-dark text-white m-4">
+                                    <div style="padding: 30px"><img class="card-img-top bg-dark text-white" src="{{asset('assets/'. $item->category->name.'.png')}}" alt=""></div>
+                                    <div class="card-body" style="flex: 1 1 1 !important;">
+                                        <h4 class="card-title">
+                                        <a href="#" style="font-weight: 700" class="text-white">{{ $item->name }}</a>
+                                        </h4>
+                                        <p style="font-style: italic">[{{ $item->category->name }}]</p>
+                                        <p style="font-weight: 700">Rp{{ $item->price }}</p>
+                                    </div>
+                                    <div class="card-footer d-flex bg-dark text-white" style="justify-content: space-between; flex-direction: column">
+                                        <div class="m-1">
+                                            <a href="{{route('products.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Product Detail</a>
+                                        </div>
+                                        <div class="m-1">
+                                            <a href="{{route('products.other_user', ['id'=> $item->user->id])}}"  class="btn btn-primary text-white" style="width: 100%;">Seller Other Products</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                    </div>
+                    @if ($items->hasPages())
+                        <div class="custom-pagination d-flex text-white mt-2" style="justify-content: center;">
+                            {{ $items->links() }}
                         </div>
-                        <div class="col-lg-4 col-md-6 mb-4">
-                        <br>
-                            <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">PROCESSOR</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 offset-md-2 mb-4">
-                        <br>
-                        <div class="card h-100 bg-dark text-white">
-                            <a href="#"><img class="card-img-top bg-dark text-white"style="width:300px; height:250px"  src="https://storage-asset.msi.com/event/2020/mb/z490/images/msi-motherboards-z490-models.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">MOTHERBOARD</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer">
-                                    <a href=""  class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-4">
-                        <br>
-                        <div class="card h-100 bg-dark text-white">
-                            <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.com/content/dam/products/hero/foreground/data-center-ssds-marquee-16x9.png.rendition.intel.web.320.180.png" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                    <a href="#" class="text-white">STORAGE</a>
-                                    </h4>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="" class="btn btn-secondary text-white" style="width: 100%;">Lihat Detail Produk</a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>   
-                    <nav aria-label="Page navigation example" class="bg-secondary text-white mt-2">
-                        <ul class="pagination  justify-content-center bg-dark">
-                            <li class="page-item "><a class="page-link bg-secondary text-white" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link bg-secondary text-white" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+                    @endif
                 </div>
             </div>
             <br>
@@ -99,4 +47,25 @@
     </div>
 </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const customPagination = document.querySelector('.custom-pagination');
+        if (customPagination){
+            const customNav = customPagination.querySelector('nav');
+            customNav.className ='bg-secondary text-white mt-2';
+            const pagination = customPagination.querySelector('.pagination');
+            pagination.className += ' justify-content-center bg-dark mb-0';
+
+            const pageItem = customPagination.querySelectorAll('.page-item');
+            pageItem.forEach(page => {
+                const pageLink = page.querySelector('.page-link');
+                if (page.classList.contains('active')){                
+                    pageLink.className += ' bg-secondary'
+                    pageLink.style.borderColor = '#6c757d';
+                }
+                else pageLink.style.color = '#343a40';
+            })
+        }
+    });  
+</script>
 @endsection 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container " style="margin-top: 70px">
     <div class="card m-4" style="box-shadow: 1px 3px 5px 3px #ddd">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -16,11 +16,11 @@
         <form class="row" method="POST" action=" {{ route('product.post_create') }} ">
             @csrf
             <article class="card-body p-5">
-                <div class=""><label class="labels"><b>Product Name</b> </label><input type="text" class="form-control" placeholder="Product Name" name="name" value="old('name')" required autofocus autocomplete="name"></div>
-                <div class=""><label class="labels"><b>Price </b> </label><input type="text" class="form-control" placeholder="Price" name="price" value="old('price')" required autofocus autocomplete="price"></div>
+                <div class=""><label class="labels"><b>Product Name</b> </label><input type="text" class="form-control" placeholder="Product Name" name="name" value="{{ old('name') }}" required autofocus autocomplete="name"></div>
+                <div class=""><label class="labels"><b>Price </b> </label><input type="text" class="form-control" placeholder="Price" name="price" value="{{ old('price') }}" required autofocus autocomplete="price"></div>
                 <div class="form-group">
-                    <b>Description </b>   
-                    <textarea class="form-control" id="pertanyaan" name="description" rows="5" value="old('description')" required autofocus autocomplete="description" placeholder="Description"></textarea>
+                    <b>Description </b>
+                    <textarea class="form-control" id="pertanyaan" name="description" rows="5" value="{{ old('description') }}" required autofocus autocomplete="description" placeholder="Description"></textarea>
                 </div>
                     <dl class="param param-inline">
                         <dt>Kategori: </dt>

@@ -8,4 +8,5 @@ interface ItemServiceInterface{
     public function removeItem(int $id);
     public function getItem(int $id);
     public function getAllItems();
+    public function getUserItems(array $data);
 }

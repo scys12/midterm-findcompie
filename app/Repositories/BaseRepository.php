@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\Repository\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 abstract class BaseRepository implements BaseRepositoryInterface{
 
@@ -16,6 +17,33 @@ abstract class BaseRepository implements BaseRepositoryInterface{
 
     public function create(array $data){
         return $this->model->create($data);
+    }
+
+    public function where(array $data)
+    {
+        return $this->model->where($data)->get();
+    }
+
+    public function findOneBy(array $data)
+    {
+        return $this->model->where($data)->first();
+    }
+
+    public function paginate($data, $perPage = 9)
+    {
+        $page = request()->get('page', 1);
+        $offset = ($page * $perPage) - $perPage;
+        $lengthPaginator = new LengthAwarePaginator(
+            array_slice($data->all(), $offset, $perPage, false),
+            count($data->all()),
+            $perPage,
+            $page,
+            [
+                'path' => request()->url(),
+                'query' => request()->query()
+            ]
+        );
+        return $lengthPaginator;
     }
 
     public function getAll($columns = array('*'), string $orderBy = 'id', string $sortBy = 'asc')

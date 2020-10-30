@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Contracts\Repository\ItemRepositoryInterface;
 use App\Contracts\Service\ItemServiceInterface;
-use Illuminate\Support\Facades\Hash;
 
 class ItemService implements ItemServiceInterface
 {
@@ -28,6 +27,12 @@ class ItemService implements ItemServiceInterface
         return $this->itemRepository->delete($id);
     }
 
+    public function getUserItems(array $data)
+    {
+        $items = $this->itemRepository->where($data);
+        return $this->itemRepository->paginate($items);
+    }
+
     public function getItem(int $id)
     {
         return $this->itemRepository->findOrFail($id);
@@ -35,6 +40,7 @@ class ItemService implements ItemServiceInterface
 
     public function getAllItems()
     {
-        return $this->itemRepository->getAll();
+        $data = $this->itemRepository->getAll();
+        return $this->itemRepository->paginate($data);        
     }
 }
