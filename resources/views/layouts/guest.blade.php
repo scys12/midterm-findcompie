@@ -23,9 +23,9 @@
             Computer
         </div>
         <div class="nav-item navbar-right mr-2">
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            <form method="GET" action="{{route('products.search')}}" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search Product Name" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
         <i  style="font-size:24px; color:white" class="fa">&#xf07a;</i>

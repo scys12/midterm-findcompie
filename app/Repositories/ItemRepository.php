@@ -21,9 +21,16 @@ class ItemRepository extends BaseRepository implements ItemRepositoryInterface {
         return $this->model->save();
     }
 
+    public function updateIsBought($id)
+    {
+        $item = $this->findOrFail($id);
+        $item->is_bought = true;
+        return $item->save();
+    }
+
     public function update(array $data, int $id)
     {
-        $item = $this->find($id);
+        $item = $this->findOrFail($id);
         $item->name = $data['name'];
         $item->price = $data['price'];
         $item->description = $data['description'];

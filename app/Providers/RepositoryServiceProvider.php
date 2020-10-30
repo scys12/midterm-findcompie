@@ -9,6 +9,10 @@ use App\Contracts\Repository\BaseRepositoryInterface;
 use App\Repositories\BaseRepository;
 use App\Contracts\Repository\CategoryRepositoryInterface;
 use App\Repositories\CategoryRepository;
+use App\Contracts\Repository\TransactionRepositoryInterface;
+use App\Repositories\TransactionRepository;
+use App\Contracts\Repository\UserRepositoryInterface;
+use App\Repositories\UserRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -22,6 +26,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ItemRepositoryInterface::class, ItemRepository::class);
         $this->app->bind(BaseRepositoryInterface::class, BaseRepository::class);
         $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        $this->app->bind(TransactionRepositoryInterface::class, TransactionRepository::class);
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
     }
 
     /**

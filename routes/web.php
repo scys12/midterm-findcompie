@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,9 @@ Route::get('/products', [ItemController::class, 'displayAllItems'])
 
 Route::get('/products/seller/{id}', [ItemController::class, 'displayOtherUserItems'])
             ->name('products.other_user');
+
+Route::get('/search', [ItemController::class, 'searchItems'])
+            ->name('products.search');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
     Route::get('/dashboard', [ItemController::class, 'displayUserItems'])
@@ -45,10 +49,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
                     ->name('product.delete');
         
         Route::get('/{id}', [ItemController::class, 'displayUserItem'])
-                    ->name('product.show');
-                    
-        Route::get('/products/{id}', [ItemController::class, 'displayGlobalProduct'])
+                    ->name('product.show');                            
+    });
+    Route::prefix('products')->group(function() {
+        Route::get('/{id}', [ItemController::class, 'displayGlobalProduct'])
                     ->name('products.show');
+        Route::post('/{id}/buy', [TransactionController::class, 'createTransaction'])
+                    ->name('product.buy');
     });
 });
 

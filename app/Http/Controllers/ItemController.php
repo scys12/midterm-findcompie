@@ -49,8 +49,10 @@ class ItemController extends Controller
     public function displayOtherUserItems($id)
     {
         $user_data = array('user_id' => $id, 'is_bought' => false);
+        $result = $this->itemService->getOtherItems($user_data);
         return view('products.sellers', [
-            'items' => $this->itemService->getUserItems($user_data)
+            'items' => $result['paginate'],
+            'user' => $result['user'],
         ]);
     }
 
@@ -92,5 +94,13 @@ class ItemController extends Controller
         $id = $request->id;
         $deletedItem = $this->itemService->removeItem($id);
         return redirect()->route('dashboard')->with('status', 'Item successfully deleted');
+    }
+
+    public function searchItems(Request $request)
+    {
+        $search = $request->search;
+        return view('products.search', [
+            'items' => $this->itemService->searchItems($search)
+        ]);
     }
 }
