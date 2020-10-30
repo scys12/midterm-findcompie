@@ -17,7 +17,7 @@
                         <div class="col-lg-4 col-md-6 mb-4 ">
                             <br>
                             <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.shwetacomputer.com/wp-content/uploads/2020/08/153665251610-800x430.png" alt=""></a>
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/ram.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">RAM</a>
@@ -31,7 +31,7 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
                             <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://i1.wp.com/urbandigital.id/wp-content/uploads/2019/02/VGA-GAMING-TERMURAH.png?fit=768%2C380&ssl=1" alt=""></a>
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/vga.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">VGA</a>
@@ -45,7 +45,7 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
                             <div class="card h-100 bg-dark text-white">
-                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.co.id/content/dam/products/hero/foreground/processor-box-core-i9-x-series-1x1.png.rendition.intel.web.550.550.png" alt=""></a>
+                                <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/processor.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">PROCESSOR</a>
@@ -59,7 +59,7 @@
                         <div class="col-lg-4 col-md-6 offset-md-2 mb-4">
                         <br>
                         <div class="card h-100 bg-dark text-white">
-                            <a href="#"><img class="card-img-top bg-dark text-white"style="width:300px; height:250px"  src="https://storage-asset.msi.com/event/2020/mb/z490/images/msi-motherboards-z490-models.png" alt=""></a>
+                            <a href="#"><img class="card-img-top bg-dark text-white"style="width:300px; height:250px"  src="/assets/motherboard.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">MOTHERBOARD</a>
@@ -73,7 +73,7 @@
                         <div class="col-lg-4 col-md-6 mb-4">
                         <br>
                         <div class="card h-100 bg-dark text-white">
-                            <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="https://www.intel.com/content/dam/products/hero/foreground/data-center-ssds-marquee-16x9.png.rendition.intel.web.320.180.png" alt=""></a>
+                            <a href="#"><img class="card-img-top bg-dark text-white" style="width:300px; height:250px" src="/assets/storage.png" alt=""></a>
                                 <div class="card-body">
                                     <h4 class="card-title">
                                     <a href="#" class="text-white">STORAGE</a>
