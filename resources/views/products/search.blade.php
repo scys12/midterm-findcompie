@@ -7,15 +7,8 @@
     <div class="row">
         <div class=" justify-content-center" style="width: 100%">
             <div class="card-home card bg-dark text-white">
-                <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">My Products
-                    <a class="btn btn-primary profile-button float-right" href="{{route('product.create')}}">
-                        <i style="font-size:20px" class=" mr-2 pt-1 fa">&#xf067;</i>Add Product</a>
-                </h4>  
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                    <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">Search Result
+                    </h4>  
                 <div class="card-body bg-dark text-white">
                     <div class="show-grid text-center row bg-secondary text-white" style="justify-content: center;display: flex;">
                         @if (count($items) > 0)
@@ -33,48 +26,20 @@
                                         </div>
                                         <div class="card-footer d-flex bg-dark text-white" style="justify-content: space-between; flex-direction: column">
                                             <div class="m-1">
-                                                <a href="{{route('product.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Product Detail</a>
+                                                <a href="{{route('products.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Product Detail</a>
                                             </div>
                                             <div class="m-1">
-                                                <a href="{{route('product.update', ['id'=> $item->id])}}"  class="btn btn-warning text-white" style="width: 100%;">Edit Product</a>
-                                            </div>
-                                            <div class="m-1">
-                                                <button data-toggle="modal" data-target="#myModal" class="btn-del btn btn-danger text-white" data-item-id="{{$item->id}}" style="width: 100%;"> Delete Product </button>
+                                                <a href="{{route('products.other_user', ['id'=> $item->user->id])}}"  class="btn btn-primary text-white" style="width: 100%;">Seller Other Products</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         @else
-                        <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center" style="width: 100%; height:100%;min-height: 60vh;align-items:center">
-                            <h1 style="font-size: 57px;font-style: italic">NO PRODUCT</h1>
-                        </div>
-                        @endif
-                    </div>   
-                    <div id="myModal" class="modal fade">
-                        <div class="modal-dialog modal-confirm">
-                            <div class="modal-content">
-                                <div class="modal-header flex-column">
-                                    <div class="icon-box">
-                                        <i class="fa">&#xf00d;</i>
-                                    </div>						
-                                    <h4 class="modal-title w-100">Are you sure you?</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Do you really want to delete this product? This process cannot be undone.</p>
-                                </div>
-                                <div class="modal-footer justify-content-center">
-                                    <form action="{{route('product.delete')}}" method="post">
-                                        @csrf
-                                        {!! method_field('delete') !!}
-                                        <input type="hidden" name="id" id="idDel">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                </div>
+                            <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center" style="width: 100%; height:100%;min-height: 60vh;align-items:center">
+                                <h1 style="font-size: 57px;font-style: italic">NO RESULT</h1>
                             </div>
-                        </div>
+                        @endif
                     </div>
                     @if ($items->hasPages())
                         <div class="custom-pagination d-flex text-white mt-2" style="justify-content: center;">
@@ -107,15 +72,6 @@
                 else pageLink.style.color = '#343a40';
             })
         }
-    });
-
-    const btnDelete  = document.querySelectorAll('.btn-del');
-    btnDelete.forEach( btn => {
-        btn.addEventListener('click', (e) =>{
-            const itemID = e.currentTarget.getAttribute('data-item-id');
-            document.querySelector('#idDel').value = itemID;
-        })
-    });
-
+    });  
 </script>
 @endsection 

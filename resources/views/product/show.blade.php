@@ -14,17 +14,17 @@
                         </span> 
                     </p> <!-- price-detail-wrap .// -->
                     <dl class="item-property">
-                        <dt>Deskripsi Produk</dt>
+                        <dt>Product Description</dt>
                         <dd class=""><p>{{ $item->description }}</p></dd>
                     </dl>
                     <dl class="param param-feature">
-                        <dt>Kategori</dt>
+                        <dt>Category</dt>
                         <dd>{{ $item->category->name }}</dd>
                     </dl>  <!-- item-property-hor .// -->
-                    <a href="javascript:history.back()" class="btn btn-lg btn-danger text-uppercase">  Back </a>                    
+                    <a href="javascript:history.back()" class="btn btn-lg btn-danger text-uppercase">  Back </a>
                 </article> <!-- card-body.// -->
                 <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="/asstes/vga.png" alt=""></a>
+                    <a href="#"><img class="card-img mt-5 ml-5" style="width:300px; height:250px;" src="/assets/vga.png" alt=""></a>
                 </article>
             </div> <!-- row.// -->
         </div> <!-- card.// -->

@@ -7,8 +7,8 @@
     <div class="row">
         <div class=" justify-content-center" style="width: 100%">
             <div class="card-home card bg-dark text-white">
-                    <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">All Products
-                    </h4>  
+                <h4 class="card-header bg-dark text-white pl-5 ml-5" style="text-align : center">{{$user->name}}'s Products
+                </h4>  
                 <div class="card-body bg-dark text-white">
                     <div class="show-grid text-center row bg-secondary text-white" style="justify-content: center;display: flex;">
                         @if (count($items) > 0)
@@ -27,10 +27,7 @@
                                         <div class="card-footer d-flex bg-dark text-white" style="justify-content: space-between; flex-direction: column">
                                             <div class="m-1">
                                                 <a href="{{route('products.show', ['id'=> $item->id])}}"  class="btn btn-secondary text-white" style="width: 100%;">Product Detail</a>
-                                            </div>
-                                            <div class="m-1">
-                                                <a href="{{route('products.other_user', ['id'=> $item->user->id])}}"  class="btn btn-primary text-white" style="width: 100%;">Seller Other Products</a>
-                                            </div>
+                                            </div>                                        
                                         </div>
                                     </div>
                                 </div>
@@ -39,8 +36,8 @@
                             <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center" style="width: 100%; height:100%;min-height: 60vh;align-items:center">
                                 <h1 style="font-size: 57px;font-style: italic">NO PRODUCT</h1>
                             </div>
-                        @endif
-                    </div>
+                        @endif                        
+                    </div>   
                     @if ($items->hasPages())
                         <div class="custom-pagination d-flex text-white mt-2" style="justify-content: center;">
                             {{ $items->links() }}

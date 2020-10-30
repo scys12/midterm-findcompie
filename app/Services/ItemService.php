@@ -3,13 +3,16 @@
 namespace App\Services;
 
 use App\Contracts\Repository\ItemRepositoryInterface;
+use App\Contracts\Repository\UserRepositoryInterface;
 use App\Contracts\Service\ItemServiceInterface;
 
 class ItemService implements ItemServiceInterface
 {
     private $itemRepository;
-    public function __construct(ItemRepositoryInterface $itemRepository) {
+    private $userRepository;
+    public function __construct(ItemRepositoryInterface $itemRepository, UserRepositoryInterface $userRepository) {
         $this->itemRepository = $itemRepository;
+        $this->userRepository = $userRepository;
     }
     
     public function createItem(array $data)
@@ -33,6 +36,13 @@ class ItemService implements ItemServiceInterface
         return $this->itemRepository->paginate($items);
     }
 
+    public function getOtherItems(array $data)
+    {
+        $items = $this->itemRepository->where($data);
+        $user = $this->userRepository->findOrFail($data['user_id']);
+        return array( 'paginate' => $this->itemRepository->paginate($items), 'user' => $user);
+    }
+
     public function getItem(int $id)
     {
         return $this->itemRepository->findOrFail($id);
@@ -40,7 +50,17 @@ class ItemService implements ItemServiceInterface
 
     public function getAllItems()
     {
-        $data = $this->itemRepository->getAll();
-        return $this->itemRepository->paginate($data);        
+        $filter = array('is_bought' => false);
+        $data = $this->itemRepository->where($filter);
+        return $this->itemRepository->paginate($data);
+    }
+
+    public function searchItems($data)
+    {
+        $column = 'name';
+        $operator = 'like';
+        $target = '%'.$data.'%';
+        $searched_data = $this->itemRepository->search($column, $operator, $target);
+        return $this->itemRepository->paginate($searched_data);
     }
 }

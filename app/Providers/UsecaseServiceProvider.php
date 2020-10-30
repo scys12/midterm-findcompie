@@ -6,7 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use App\Contracts\Service\ItemServiceInterface;
 use App\Services\ItemService;
 use App\Contracts\Service\CategoryServiceInterface;
+use App\Contracts\Service\TransactionServiceInterface;
 use App\Services\CategoryService;
+use App\Services\TransactionService;
 
 class UsecaseServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class UsecaseServiceProvider extends ServiceProvider
     {
         $this->app->bind(ItemServiceInterface::class, ItemService::class);
         $this->app->bind(CategoryServiceInterface::class, CategoryService::class);
+        $this->app->bind(TransactionServiceInterface::class, TransactionService::class);
     }
 
     /**

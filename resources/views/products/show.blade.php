@@ -13,11 +13,11 @@
                       </span> 
                   </p> <!-- price-detail-wrap .// -->
                   <dl class="item-property">
-                      <dt>Deskripsi Produk</dt>
+                      <dt>Product Description</dt>
                       <dd class=""><p>{{ $item->description }}</p></dd>
                   </dl>
                   <dl class="param param-feature">
-                      <dt>Kategori</dt>
+                      <dt>Category</dt>
                       <dd>{{ $item->category->name }}</dd>
                   </dl>  <!-- item-property-hor .// -->
                   <dl class="param param-feature">
@@ -29,7 +29,7 @@
                     <dd>{{ $item->user->location }}</dd>
                   </dl>  <!-- item-property-hor .// -->
                   <div class="d-flex">
-                      @if ($item->user->id == Auth::user()->id)                                
+                      @if ($item->user->id != Auth::user()->id)
                         <p style="margin-right: 5px"><a class="btn btn-primary" data-toggle="modal" data-target="#cartModal" href=""><i class="fa fa-shopping-cart"></i> Buy Now</a></p>
                     @endif
                     <p><a class="btn btn-danger" href="javascript:history.back()">Back</a></p>
@@ -49,7 +49,7 @@
     <div class="modal-content">
       <div class="modal-header border-bottom-0">
         <h5 class="modal-title" id="exampleModalLabel">
-          Keranjang Belanja
+          Cart
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -60,31 +60,36 @@
           <thead>
             <tr>
               <th scope="col"></th>
-              <th scope="col">Produk</th>
-              <th scope="col">Harga</th>
-              <th scope="col">Jumlah</th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
               <th scope="col">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="w-25">
-                <img src="/assets/processor.png" class="img-fluid img-thumbnail" alt="Sheep">
+                <img src="{{asset('assets/'.$item->category->name.'.png')}}" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
-              <td>Vans Sk8-Hi MTE Shoes</td>
-              <td>1700000</td>
-              <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-              <td>Rp. 1700000</td>
+              <td>{{$item->name}}</td>
+              <td>{{$item->price}}</td>              
+              <td>{{$item->price}}</td>              
             </tr>
           </tbody>
         </table> 
         <div class="d-flex justify-content-end">
-          <h5>Total: <span class="price text-success">Rp. 1700000</span></h5>
+          <h5>Total: <span class="price text-success">{{$item->price}}</span></h5>
         </div>
       </div>
       <div class="modal-footer border-top-0 d-flex justify-content-between">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Checkout</button>
+        <form action="{{route('product.buy', ['id' => $item->id])}}" method="post">
+          @csrf
+          <input type="hidden" name="item_id" value="{{$item->id}}">
+          <input type="hidden" name="name" value="{{$item->name}}">
+          <input type="hidden" name="category_id" value="{{$item->category->id}}">
+          <input type="hidden" name="price" value="{{$item->price}}">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success">Checkout</button>
+        </form>
       </div>
     </div>
   </div>

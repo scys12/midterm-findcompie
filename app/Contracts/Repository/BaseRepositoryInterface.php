@@ -12,4 +12,5 @@ interface BaseRepositoryInterface{
     public function getAll();
     public function find(int $id);
     public function findOrFail(int $id);
+    public function search($column, $operator, $target);
 }

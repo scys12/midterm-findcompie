@@ -70,4 +70,9 @@ abstract class BaseRepository implements BaseRepositoryInterface{
     {
         return $this->find($id)->delete();
     }
+
+    public function search($column, $operator, $target)
+    {
+        return $this->model->where($column, $operator, $target)->get();
+    }
 }
