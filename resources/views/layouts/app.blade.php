@@ -32,11 +32,11 @@
             <a class="nav-link dropdown-toggle"  style="color: white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Category</a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">RAM</a>
-                <a class="dropdown-item" href="#">VGA</a>
-                <a class="dropdown-item" href="#">Processor</a>
-                <a class="dropdown-item" href="#">Motherboard</a>
-                <a class="dropdown-item" href="#">Storage</a>
+                <a class="dropdown-item" href="{{ url('products') }}">RAM</a>
+                <a class="dropdown-item" href="{{ url('products') }}">VGA</a>
+                <a class="dropdown-item" href="{{ url('products') }}">Processor</a>
+                <a class="dropdown-item" href="{{ url('products') }}">Motherboard</a>
+                <a class="dropdown-item" href="{{ url('products') }}">Storage</a>
             </div>
         </div>
         <a href="{{ route('products') }}" style="color: white" class="nav-link"> Products </a>

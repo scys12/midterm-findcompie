@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="bg-dark">
-    <div class="container mt-5 " >
+    <div class="container " >
         <div class="card bg-dark" >
             @if ($errors->any())
                 <div class="alert alert-danger">
